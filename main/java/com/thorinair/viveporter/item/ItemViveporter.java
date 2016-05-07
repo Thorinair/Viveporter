@@ -59,36 +59,6 @@ public class ItemViveporter extends Item {
             player.setPositionAndUpdate(x + 0.5, y + 1, z + 0.5);
         }
 
-        /*
-        if (!world.isAirBlock(x, y, z) &&
-                checkMaterial(world.getBlock(x, y, z).getMaterial()) &&
-                !world.isAirBlock(x, y - 1, z) &&
-                checkMaterial(world.getBlock(x, y + 2, z).getMaterial())) {
-
-            player.setPositionAndUpdate(x + 0.5, y, z + 0.5);
-        }
-        else if (!world.isAirBlock(x, y, z) &&
-                !checkMaterial(world.getBlock(x, y, z).getMaterial()) &&
-                checkMaterial(world.getBlock(x, y + 1, z).getMaterial()) &&
-                checkMaterial(world.getBlock(x, y + 2, z).getMaterial())) {
-
-            player.setPositionAndUpdate(x + 0.5, y + 1, z + 0.5);
-        }
-        */
-
         return false;
-    }
-
-    private boolean checkMaterial(Material material) {
-        return material == Material.air ||
-                material == Material.carpet ||
-                material == Material.circuits ||
-                material == Material.plants ||
-                material == Material.vine ||
-                material == Material.snow ||
-                material == Material.portal ||
-                material == Material.web ||
-                material == Material.water ||
-                material == Material.lava;
     }
 }
