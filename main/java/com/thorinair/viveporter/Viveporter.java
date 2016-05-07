@@ -1,5 +1,6 @@
 package com.thorinair.viveporter;
 
+import com.thorinair.viveporter.init.Items;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -27,15 +28,13 @@ public class Viveporter
     public static CommonProxy proxy;
 
     // Set up creative tabs.
-    /*
     public static CreativeTabs tab = new CreativeTabs("tab") {
         @Override
         @SideOnly(Side.CLIENT)
         public Item getTabIconItem() {
-            return Item.getItemFromBlock();
+            return Items.itemViveporter;
         }
     };
-    */
 
     /**
      * Handles preInit.

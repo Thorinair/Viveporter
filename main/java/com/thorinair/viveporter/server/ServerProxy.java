@@ -6,7 +6,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 /**
- * @author Thorinair   <celestek@openmailbox.org>
+ * @author Thorinair   <thorinair@gmail.com>
  */
 
 public class ServerProxy extends CommonProxy {
