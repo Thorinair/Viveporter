@@ -1,0 +1,16 @@
+[
+{
+  "modid": "viveporter",
+  "name": "Viveporter",
+  "description": "Adds a special teleportation device called the Viveporter which lets you teleport when using your HTC Vive headset, replacing the default Minecrift functionality.",
+  "version": "0.1.0",
+  "mcversion": "1.7.10",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Thorinair"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
