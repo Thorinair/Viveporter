@@ -1,5 +1,5 @@
 # Description
-
+Minecraft mod which helps players use teleportation on servers when playing with the HTC Vive version of Minecrift.
 
 # Installing
 **Prerequisites**
