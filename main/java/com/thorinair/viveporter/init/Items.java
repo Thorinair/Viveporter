@@ -5,7 +5,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
 
 /**
- * @author Thorinair   <celestek@openmailbox.org>
+ * @author Thorinair   <thorinair@gmail.com>
  */
 
 public class Items {
