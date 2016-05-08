@@ -17,7 +17,7 @@ public class EventHandler {
     @SubscribeEvent
     public void onPlayerLoginEvent(PlayerEvent.PlayerLoggedInEvent event) {
         // If this is the player on server side...
-        if (event.player instanceof EntityPlayerMP) {
+        if (event.player instanceof EntityPlayerMP && Config.cfgGeneralLogin) {
             EntityPlayerMP player = (EntityPlayerMP) event.player;
 
             if (!player.inventory.hasItem(Items.itemViveporter))
@@ -31,7 +31,7 @@ public class EventHandler {
     @SubscribeEvent
     public void onPlayerRespawnEvent(PlayerEvent.PlayerRespawnEvent event) {
         // If this is the player on server side...
-        if (event.player instanceof EntityPlayerMP) {
+        if (event.player instanceof EntityPlayerMP && Config.cfgGeneralRespawn) {
             EntityPlayerMP player = (EntityPlayerMP) event.player;
 
             if (!player.inventory.hasItem(Items.itemViveporter))

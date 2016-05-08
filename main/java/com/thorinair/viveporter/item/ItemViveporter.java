@@ -1,6 +1,7 @@
 package com.thorinair.viveporter.item;
 
 import com.thorinair.viveporter.Viveporter;
+import com.thorinair.viveporter.init.Config;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -39,18 +40,23 @@ public class ItemViveporter extends Item {
      */
     @Override
     public boolean onItemUseFirst(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side, float hitX, float hitY, float hitZ) {
+        if (!world.isRemote) {
+            if ((world.getBlock(x, y, z).getCollisionBoundingBoxFromPool(world, x, y, z) == null) &&
+                    (world.getBlock(x, y - 1, z).getCollisionBoundingBoxFromPool(world, x, y, z) != null) &&
+                    (world.getBlock(x, y + 1, z).getCollisionBoundingBoxFromPool(world, x, y, z) == null)) {
 
-        if ((world.getBlock(x, y, z).getCollisionBoundingBoxFromPool(world, x, y, z) == null) &&
-                (world.getBlock(x, y - 1, z).getCollisionBoundingBoxFromPool(world, x, y, z) != null) &&
-                (world.getBlock(x, y + 1, z).getCollisionBoundingBoxFromPool(world, x, y, z) == null)) {
+                if (Config.cfgGeneralDebugging)
+                    System.out.println("[Viveporter]: Teleporting '" + player.getDisplayName() + "' to (" + (x + 0.5) + ", " + y + ", " + (z + 0.5) + ")!");
+                player.setPositionAndUpdate(x + 0.5, y, z + 0.5);
+            }
+            else if ((world.getBlock(x, y, z).getCollisionBoundingBoxFromPool(world, x, y, z) != null) &&
+                    (world.getBlock(x, y + 1, z).getCollisionBoundingBoxFromPool(world, x, y, z) == null) &&
+                    (world.getBlock(x, y + 2, z).getCollisionBoundingBoxFromPool(world, x, y, z) == null)) {
 
-            player.setPositionAndUpdate(x + 0.5, y, z + 0.5);
-        }
-        else if ((world.getBlock(x, y, z).getCollisionBoundingBoxFromPool(world, x, y, z) != null) &&
-                (world.getBlock(x, y + 1, z).getCollisionBoundingBoxFromPool(world, x, y, z) == null) &&
-                (world.getBlock(x, y + 2, z).getCollisionBoundingBoxFromPool(world, x, y, z) == null)) {
-
-            player.setPositionAndUpdate(x + 0.5, y + 1, z + 0.5);
+                if (Config.cfgGeneralDebugging)
+                    System.out.println("[Viveporter]: Teleporting '" + player.getDisplayName() + "' to (" + (x + 0.5) + ", " + (y + 1) + ", " + (z + 0.5) + ")!");
+                player.setPositionAndUpdate(x + 0.5, y + 1, z + 0.5);
+            }
         }
 
         return false;

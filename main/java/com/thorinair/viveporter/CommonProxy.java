@@ -1,5 +1,6 @@
 package com.thorinair.viveporter;
 
+import com.thorinair.viveporter.init.Config;
 import com.thorinair.viveporter.init.EventHandler;
 import com.thorinair.viveporter.init.Items;
 import cpw.mods.fml.common.FMLCommonHandler;
@@ -18,6 +19,7 @@ public class CommonProxy {
      */
     public void preInit(FMLPreInitializationEvent e) {
 
+        Config.initializeConfig(e);
         Items.initializeItems();
     }
 
