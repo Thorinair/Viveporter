@@ -28,7 +28,7 @@ public class Viveporter
     public static CommonProxy proxy;
 
     // Set up creative tabs.
-    public static CreativeTabs tab = new CreativeTabs("tab") {
+    public static CreativeTabs tab = new CreativeTabs("tabViveporter") {
         @Override
         @SideOnly(Side.CLIENT)
         public Item getTabIconItem() {
