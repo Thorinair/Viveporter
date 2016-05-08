@@ -76,6 +76,11 @@ public class RendererViveporter implements IItemRenderer {
             }
 
             case EQUIPPED_FIRST_PERSON: {
+                GL11.glTranslatef(0.5F, 0.5F, 0.5F);
+                GL11.glRotatef(0.0F, 0.0F, 0.0F, 1.0F);
+                GL11.glRotatef(-42.0F, 0.0F, 1.0F, 0.0F);
+                GL11.glRotatef(2.5F, 1.0F, 0.0F, 0.0F);
+                GL11.glTranslatef(-0.5F, -0.5F, -0.5F);
                 break; // caller expects us to render over [0,0,0] to [1,1,1], no transformation necessary
             }
             case INVENTORY: {  // caller expects [-0.5, -0.5, -0.5] to [0.5, 0.5, 0.5]
@@ -136,7 +141,10 @@ public class RendererViveporter implements IItemRenderer {
         tessellator.addVertexWithUV(0.375, 0.375, 0.125, icon.getInterpolatedU(12), icon.getInterpolatedV(4));
 
         switch (type) {
+            case EQUIPPED_FIRST_PERSON:
             case EQUIPPED: {
+                tessellator.draw();
+                tessellator.startDrawingQuads();
                 GL11.glPushMatrix();
                 GL11.glEnable(GL11.GL_BLEND);
                 GL11.glDisable(GL11.GL_LIGHTING);
@@ -165,7 +173,6 @@ public class RendererViveporter implements IItemRenderer {
                 GL11.glPopMatrix();
                 break;
             }
-            case EQUIPPED_FIRST_PERSON:
             case INVENTORY:
             case ENTITY:
                 break;
