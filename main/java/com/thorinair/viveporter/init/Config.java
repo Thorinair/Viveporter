@@ -4,7 +4,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.common.config.Configuration;
 
 /**
- * @author Thorinair   <celestek@openmailbox.org>
+ * @author Thorinair   <thorinair@gmail.com>
  */
 
 public class Config {
