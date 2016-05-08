@@ -58,7 +58,7 @@ public class RendererViveporter implements IItemRenderer {
     @Override
     public void renderItem(ItemRenderType type, ItemStack item, Object... data) {
 
-        double range = 16.7;
+        double range = 22.0;
         Tessellator tessellator = Tessellator.instance;
         tessellator.startDrawingQuads();
 
@@ -67,8 +67,10 @@ public class RendererViveporter implements IItemRenderer {
         switch (type) {
             case EQUIPPED: {
                 GL11.glTranslatef(0.5F, 0.5F, 0.5F);
-                GL11.glRotatef(90F, 1.1F, 0.0F, 0.0F);
-                GL11.glTranslatef(-0.5F, -0.5F, -0.5F);
+                GL11.glRotatef(-0.5F, 0.0F, 0.0F, 1.0F);
+                GL11.glRotatef(-46.0F, 0.0F, 1.0F, 0.0F);
+                GL11.glRotatef(110.5F, 1.0F, 0.0F, 0.0F);
+                GL11.glTranslatef(-0.475F, -0.345F, -0.5F);
                 transformationToBeUndone = TransformationTypes.THIRDPERSONEQUIPPED;
                 break;
             }
