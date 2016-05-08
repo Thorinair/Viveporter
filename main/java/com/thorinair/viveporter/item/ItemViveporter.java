@@ -1,17 +1,10 @@
 package com.thorinair.viveporter.item;
 
 import com.thorinair.viveporter.Viveporter;
-import net.minecraft.block.material.Material;
-import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.MathHelper;
-import net.minecraft.util.MovingObjectPosition;
-import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
-import net.minecraftforge.common.util.ForgeDirection;
 
 /**
  * @author Thorinair   <thorinair@gmail.com>
@@ -30,6 +23,7 @@ public class ItemViveporter extends Item {
         setUnlocalizedName(itemName);
         setCreativeTab(Viveporter.tab);
         setTextureName(Viveporter.MODID + ":" + itemName);
+        setMaxStackSize(1);
     }
 
     /**
